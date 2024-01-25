@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heating prom</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    /> -->
+    <link rel="icon" type="image/ico" href="./favicon.ico" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- <promhtml> -->
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700&display=swap);
+
+      /* @charset "UTF-8"; */
+
+      * {
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      *::before,
+      *::after {
+        display: inline-block;
+      }
+
+      html,
+      body {
+        height: 100%;
+        min-width: 320px;
+      }
+
+      body {
+        color: #000;
+        line-height: 1;
+        font-family: "Montserrat";
+        font-size: 1.25rem;
+        -ms-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      input,
+      button,
+      textarea {
+        font-family: "Montserrat";
+        font-size: inherit;
+        line-height: inherit;
+      }
+
+      button {
+        cursor: pointer;
+        color: inherit;
+        background-color: transparent;
+      }
+
+      a {
+        display: inline-block;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ul li {
+        list-style: none;
+      }
+
+      img {
+        vertical-align: top;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: inherit;
+        font-size: inherit;
+      }
+
+      [class*="__container"] {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 5px;
+        position: relative;
+
+        @media (max-width: 767px) {
+          width: 320px;
+        }
+        @media (min-width: 768px) and (max-width: 844px) {
+          width: 768px;
+        }
+        @media (min-width: 845px) {
+          width: 845px;
+        }
+      }
+
+      section {
+        position: relative;
+        display: flex;
+        background-color: #4b4b4b;
+      }
+      .page-main__container {
+        padding-bottom: 10px;
+      }
+      .page-main__img {
+        > img {
+          width: 100%;
+          border-radius: 7px;
+        }
+        display: none;
+        @media (min-width: 768px) {
+          display: block;
+        }
+      }
+
+      .page-main__title {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 5px;
+        font-size: 24px;
+        line-height: 1.35;
+        text-transform: uppercase;
+        color: #d1e9ff;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 7px;
+        background-color: #000000;
+      }
+
+      .page-main__content {
+        @media (min-width: 768px) {
+          position: absolute;
+          top: 76px;
+          right: 0;
+          height: 100%;
+          width: 48%;
+          max-width: 360px;
+          background-color: #4b4b4b;
+        }
+      }
+      @keyframes slideInFrom {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .page-main__subtitle {
+        margin-bottom: 20px;
+        padding: 5px;
+
+        font-size: 16px;
+        text-align: justify;
+        color: #adb9c5;
+        font-weight: 400;
+        line-height: 1.1;
+        animation: 1s ease-out 0s 1 slideInFrom;
+        @media (min-width: 768px) {
+          text-align: left;
+          padding: 5px 8px;
+          padding-left: 25px;
+          margin-bottom: 80px;
+        }
+      }
+      .page-main__subtitle span {
+        font-weight: 600;
+        color: #dbe3eb;
+        line-height: 1.35;
+      }
+
+      .page-main__btn {
+        margin: auto;
+        margin-bottom: 20px;
+        width: 220px;
+        height: 50px;
+        font-size: 14px;
+        border-radius: 7px;
+        border: 1px solid #fff;
+        font-weight: 500;
+        background-color: #4b4b4b;
+
+        padding: 16px 36px 15px;
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .page-main__btn > a {
+        color: #fff;
+      }
+
+      .page-main__btn:hover,
+      :focus {
+        background-color: #ff9900;
+      }
+
+      .page-main__btn:hover a,
+      .page-main__btn:focus a {
+        color: #e0e4f1;
+      }
+      .page-advantages {
+        background-color: #d1e9ff;
+      }
+      .page-advantages__title {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 5px;
+        font-size: 22px;
+        line-height: 1.35;
+        text-transform: uppercase;
+        color: #000000;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 7px;
+      }
+
+      .page-advantages__items {
+        margin-top: 35px;
+        margin-bottom: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 768px) {
+          margin-top: 0px;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 0;
+        }
+      }
+      .item-advantages {
+        position: relative;
+        overflow: hidden;
+
+        height: 260px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        border-radius: 7px;
+        padding: 10px;
+        @media (min-width: 768px) {
+          height: 290px;
+          width: 31%;
+          padding: 5px;
+        }
+      }
+      .item-advantages:hover .item-advantages__text,
+      .item-advantages:focus .item-advantages__text {
+        transform: translate(0, 0);
+      }
+      .item-advantages__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 190px;
+        height: 190px;
+        margin: auto;
+      }
+      .item-advantages__icon > img {
+        width: 100px;
+        height: 100px;
+      }
+      .item-advantages__title {
+        margin-top: 10px;
+        padding: 10px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 7px;
+        background-color: #ff9900;
+        color: #ffffff;
+        @media (min-width: 768px) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 30px;
+          height: 56px;
+        }
+      }
+      .item-advantages__text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 1.1;
+        padding: 18px;
+        font-size: 16px;
+        text-align: center;
+        color: #ffffff;
+        font-weight: 400;
+        background-color: #ff9900;
+        mix-blend-mode: normal;
+
+        overflow: auto;
+        transform: translate(0, 100%);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        @media (min-width: 768px) {
+          font-size: 14px;
+        }
+      }
+
+      .item-advantages__text span {
+        font-weight: 600;
+        color: #dbe3eb;
+      }
+      .item-advantages__text a {
+        font-weight: 500;
+        text-decoration: underline;
+      }
+      .page-advantages__image {
+        display: none;
+      }
+
+      .page-order {
+        background-color: #d1e9ff;
+      }
+
+      .page-order__img img {
+        width: 100%;
+        border-radius: 7px;
+      }
+
+      .page-order__title {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 5px;
+        font-size: 22px;
+        line-height: 1.35;
+        text-transform: uppercase;
+        color: #000000;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 7px;
+      }
+
+      .page-order__items {
+        margin-bottom: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 768px) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+        }
+      }
+      .item-order {
+        position: relative;
+        padding: 10px;
+        @media (min-width: 768px) {
+          width: 31%;
+        }
+      }
+      .item-order__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 190px;
+        height: 190px;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 7px;
+        box-shadow: 0px 4px 6px 2px #acb6d9;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: #ff9900;
+      }
+      .item-order__icon > img {
+        width: 100px;
+        height: 100px;
+      }
+      .item-order__icon:hover,
+      .item-order__icon:focus {
+        transform: scale(1.1);
+      }
+      .item-order__title {
+        padding: 5px;
+        font-size: 22px;
+        line-height: 1.35;
+        text-transform: uppercase;
+        color: #4b4b4b;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 7px;
+      }
+      .item-order__text {
+        padding: 18px;
+        font-size: 16px;
+        text-align: center;
+        color: #4b4b4b;
+        font-weight: 400;
+        line-height: 1.1;
+        @media (min-width: 768px) {
+          font-size: 14px;
+          text-align: justify;
+          padding: 10px;
+        }
+      }
+      .page-accent {
+        background-image: url(https://images.prom.ua/5358203392_3486940.jpg);
+        background-color: #4b4b4b;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .page-accent__text {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 18px;
+        font-size: 16px;
+        text-align: justify;
+        color: #ffffff;
+        font-weight: 400;
+        line-height: 1.1;
+        border-radius: 7px;
+        background-color: #4b4b4b;
+        opacity: 0.6;
+      }
+      .page-accent span {
+        font-weight: 600;
+        color: #dbe3eb;
+        line-height: 1.35;
+      }
+      .page-accent a {
+        font-weight: 500;
+        text-decoration: underline;
+        line-height: 1.35;
+      }
+
+      .page-description {
+        background-color: #ffffff;
+      }
+      .page-description__title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 5px;
+        font-size: 22px;
+        line-height: 1.35;
+        text-transform: uppercase;
+        color: #d1e9ff;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 7px;
+        background-color: #000;
+      }
+      .page-description__title span {
+        text-decoration: underline;
+      }
+
+      .page-description__list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .page-description__item {
+        margin-bottom: 20px;
+        padding: 18px;
+        font-size: 16px;
+
+        color: #000000;
+
+        box-shadow: 0px 1px 4px 2px #797a7d;
+        font-weight: 400;
+        line-height: 1.1;
+        border-radius: 7px;
+        background-color: #ffffff;
+      }
+      .page-description__subtitle {
+        padding: 8px;
+        text-align: justify;
+        color: #000000;
+        font-weight: 600;
+        background-color: #9f9d9d;
+      }
+      .page-description__item p {
+        padding: 5px 0;
+      }
+      .page-description__item a {
+        padding: 5px 0;
+        font-size: 14px;
+        text-decoration: underline;
+      }
+    </style>
+    <section class="page-main">
+      <div class="page-main__container">
+        <h1 class="page-main__title">Газова колонка Airfel Туреччина</h1>
+        <div class="page-main__img">
+          <img
+            alt="Boiler"
+            src="https://images.prom.ua/5358118216_3486935.jpg"
+          />
+        </div>
+        <div class="page-main__content">
+          <div class="page-main__subtitle">
+            <p>
+              Поспішайте вигідно замовити <span>газовий котел airfel</span>,
+              адже його цінують за високу якість та ефективність. Виробник
+              оснастив <span>airfel котли</span> надійними комплектуючими і
+              практичними функціями економії газу та захисту від перегріву.
+              <span>Котел airfel</span> забезпечить опалення приміщення площею
+              до 240 м² та подачу гарячої води до 13 літрів/хвилину. Відмінні
+              технічні параметри та довговічність обладнання лише додають йому
+              переваг. Компанія &laquo;Опалення плюс&raquo; пропонує своїм
+              покупцям придбати <span>airfel котел</span>, <span>ціна</span> на
+              який є виправданою та відповідає заявленим робочим
+              характеристикам. До того ж при покупці Ви отримаєте газовий фільтр
+              у подарунок!
+            </p>
+          </div>
+          <div class="page-main__btn">
+            <a href="https://otoplenieplus.com.ua/ua/">До вибору колонки</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-advantages">
+      <div class="page-advantages__container">
+        <h2 class="page-advantages__title">
+          &laquo;Плюси&raquo; співпраці з магазином &laquo;Опалення плюс&raquo;
+        </h2>
+
+        <div class="page-advantages__body">
+          <ul class="page-advantages__items">
+            <li class="item-advantages">
+              <div class="item-advantages__icon">
+                <img
+                  alt="Icon box"
+                  src="https://images.prom.ua/5354452613_3486814.jpg"
+                />
+              </div>
+              <div class="item-advantages__text">
+                <p>
+                  Компанія володіє великим товарним запасом продукції. Завдяки
+                  наявності на складі, <span>котел airfel</span> чи
+                  <a
+                    href="https://otoplenieplus.com.ua/ua/g119672980-gazovyj-kotel-vulkan"
+                    >газовий казан Вулкан</a
+                  >
+                  будуть Вам надіслані у день замовлення (при оформленні заявки
+                  до 12:00 поточного дня). При оформленні замовлення після 12:00
+                  – відправимо товар наступного дня.
+                </p>
+              </div>
+
+              <h3 class="item-advantages__title">Наявність товару</h3>
+            </li>
+
+            <li class="item-advantages">
+              <div class="item-advantages__icon">
+                <img
+                  alt="Icon value"
+                  src="https://images.prom.ua/5354468608_3486817.jpg"
+                />
+              </div>
+
+              <h3 class="item-advantages__title">Вигідні пропозиції</h3>
+
+              <div class="item-advantages__text">
+                <p>
+                  Ми відкриті до діалогу і готові торгуватися. Обговорити
+                  можливість торгу та дізнатися умови пропонуємо Вам у
+                  менеджерів магазину. Надаємо вигідні знижки (розмір знижки
+                  залежить від суми/обсягу покупки на сайті). При погодженні та
+                  за повної передоплати надаємо безкоштовну доставку замовлення.
+                </p>
+              </div>
+            </li>
+
+            <li class="item-advantages">
+              <div class="item-advantages__icon">
+                <img
+                  alt="Icon choise"
+                  src="https://images.prom.ua/5354453420_3486816.jpg"
+                />
+              </div>
+
+              <h3 class="item-advantages__title">Різноманіття вибору</h3>
+
+              <div class="item-advantages__text">
+                <p>
+                  Асортимент продукції магазину – це побутове обладнання,
+                  аксесуари та приладдя різного призначення. Чи шукаєте Ви котел
+                  <span>airfel digifel duo 24 квт</span> або smart-системи для
+                  будинку, в будь-якому разі наш магазин стане Вам у нагоді.
+                  Пропонуємо на продаж лише якісну і сертифіковану продукцію від
+                  кращих українських та іноземних виробників.
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="page-advantages__image">
+            <img alt="" src="https://images.prom.ua/5352598429_3486744.jpg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-order">
+      <div class="page-order__container">
+        <div class="page-order__img">
+          <img
+            alt="The master repairs the boiler"
+            src="https://images.prom.ua/5354409743_3486813.jpg"
+          />
+        </div>
+
+        <h2 class="page-order__title">
+          Алгоритм покупки на сайті компанії &laquo;Опалення плюс&raquo;
+        </h2>
+
+        <ul class="page-order__items">
+          <li class="item-order">
+            <div class="item-order__icon">
+              <img
+                alt="Icon catalog"
+                src="https://images.prom.ua/5354566928_3486822.jpg"
+              />
+            </div>
+            <h3 class="item-order__title">Каталог</h3>
+            <div class="item-order__text">
+              <p>
+                Асортимент, зручно впорядкований за категоріями, дозволить
+                швидко зорієнтуватися та знайти необхідний зразок. За
+                необхідності Ви завжди можете звернутися до служби підтримки
+                нашої компанії.
+              </p>
+            </div>
+          </li>
+
+          <li class="item-order">
+            <div class="item-order__icon">
+              <img
+                alt="Icon order"
+                src="https://images.prom.ua/5354568224_3486823.jpg"
+              />
+            </div>
+            <h3 class="item-order__title">Заявка</h3>
+            <div class="item-order__text">
+              <p>
+                Перебуваючи на сайті, натисніть кнопку «Купити» – так обраний
+                Вами товар потрапить у кошик. Внесіть необхідну інформацію до
+                форми замовлення і надішліть запит на обробку. Оформити покупку
+                можна й через менеджера компанії у телефонному режимі.
+              </p>
+            </div>
+          </li>
+
+          <li class="item-order">
+            <div class="item-order__icon">
+              <img
+                alt="Icon accept"
+                src="https://images.prom.ua/5354568585_3486824.jpg"
+              />
+            </div>
+            <h3 class="item-order__title">Підтвердження</h3>
+            <div class="item-order__text">
+              <p>
+                Зачекайте на зворотній зв'язок від працівників служби підтримки
+                магазину. Дзвінок від оператора надійде Вам найближчим часом.
+                Менеджер з’ясує всі необхідні деталі та підтвердить покупку.
+              </p>
+            </div>
+          </li>
+
+          <li class="item-order">
+            <div class="item-order__icon">
+              <img
+                alt="Icon payment"
+                src="https://images.prom.ua/5354569424_3486825.jpg"
+              />
+            </div>
+            <h3 class="item-order__title">Оплата</h3>
+            <div class="item-order__text">
+              <p>
+                Сплатити Ви можете, обравши один із запропонованих варіантів:
+                післяплата (накладений платіж), Пром-оплата, оплата готівкою чи
+                безготівковим шляхом. За умови замовлення великогабаритних
+                товарів необхідно внести передоплату (10% вартості покупки).
+              </p>
+            </div>
+          </li>
+
+          <li class="item-order">
+            <div class="item-order__icon">
+              <img
+                alt="Icon get"
+                src="https://images.prom.ua/5354570708_3486826.jpg"
+              />
+            </div>
+
+            <h3 class="item-order__title">Отримання</h3>
+
+            <div class="item-order__text">
+              <p>
+                Максимально оперативно надсилаємо замовлення обраним Вами
+                шляхом: через транспортну компанію «Укрпошта»/«Нова Пошта» чи
+                кур’єром. Наш магазин пропонує послугу самовивозу товару у місті
+                Харків.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="page-accent">
+      <div class="page-accent__container">
+        <div class="page-accent__text">
+          Якщо Ви шукаєте, де придбати надійне обладнання у власну оселю,
+          пропонуємо переглянути каталог нашого магазину. Тут Ви знайдете
+          сучасний та функціональний
+          <span>airfel котел</span>, <span>ціна</span> на який повністю
+          відповідає виробничим параметрам приладу та його високим показникам
+          якості. Купуйте <span>газовой котел airfel</span> у магазині
+          &laquo;Опалення плюс&raquo; чи розгляньте альтернативу &ndash;
+          <a
+            href="https://otoplenieplus.com.ua/ua/g121055234-gazovye-kotly-termo"
+            >газові котли ТЕРМО димохідні</a
+          >.
+        </div>
+      </div>
+    </section>
+    <section class="page-description">
+      <div class="page-description__container">
+        <h2 class="page-description__title">
+          Газова <span>колонка</span> Airfel Туреччина: що варто знати
+        </h2>
+        <ul class="page-description__list">
+          <li class="page-description__item">
+            <h3 class="page-description__subtitle">
+              Які варіанти монтажу доступні для газових колонок Airfel?
+            </h3>
+            <p class="page-description__text">
+              Газові колонки Airfel доступні для монтажу настінно або підлогово,
+              залежно від вашого приміщення та потреб. Для квартир зазвичай
+              рекомендується настінний монтаж.
+            </p>
+          </li>
+
+          <li class="page-description__item">
+            <h3 class="page-description__subtitle">
+              Яким чином забезпечується безпека під час експлуатації газових
+              колонок Airfel?
+            </h3>
+            <p class="page-description__text">
+              Газові колонки Airfel оснащені різними захисними функціями, такими
+              як захист від перегріву, захист від надлишкового тиску та
+              автоматичне вимкнення в разі виникнення проблем. Такі функції
+              забезпечують безпеку користування.
+            </p>
+          </li>
+          <li class="page-description__item">
+            <h3 class="page-description__subtitle">
+              Які можливості управління газовими колонками Airfel?
+            </h3>
+            <p class="page-description__text">
+              Багато моделей газових колонок Airfel мають інтегрований дисплей
+              та пульт дистанційного управління, що дозволяє зручно
+              налаштовувати температуру та інші параметри. Деякі моделі
+              підтримують інтеграцію з смарт-системами.
+            </p>
+          </li>
+          <li class="page-description__item">
+            <h3 class="page-description__subtitle">
+              Як обрати газову колонку Airfel?
+            </h3>
+            <p class="page-description__text">
+              Газові колонки Airfel відомі своєю надійністю та ефективністю.
+              Вони забезпечують надійне гаряче водопостачання та економлять
+              енергію. Моделі Airfel виготовляються відповідно до високих
+              стандартів якості. Наш магазин пропонує різні моделі, включаючи
+              <a
+                href="https://otoplenieplus.com.ua/ua/p1964981377-kotel-gazovyj-turbirovannyj.html"
+                >Котел газовий турбований Airfel DigiFEL DUO 24 кВт
+                двоконтурний</a
+              >
+              <a
+                href="https://otoplenieplus.com.ua/ua/p1449574101-kotel-gazovyj-airfel.html"
+                >Котел газовий Airfel DigiFEL DUO 24 кВт двоконтурний (2018)</a
+              >
+              <a
+                href="https://otoplenieplus.com.ua/ua/p1911551938-kotel-gazovyj-airfel.html"
+                >Котел газовий Airfel DigiFEL Premix 23 кВт
+                (Двохконтурний,Condensing)+ Комплект для коаксіального димохода
+                1000</a
+              >
+              <a
+                href="https://otoplenieplus.com.ua/ua/p1746685240-kotel-gazovyj-airfel.html"
+                >Котел газовий Airfel MAESTRO 24 кВт двоконтурний
+                конденсаційний</a
+              >
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- </promhtml> -->
+  </body>
+</html>
